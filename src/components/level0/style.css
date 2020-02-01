@@ -3,7 +3,7 @@
   grid-template-rows: 1fr 1fr 1fr;
   gap: inherit;
   padding: 1rem;
-  background-color: antiquewhite;
+  background-color: teal;
   border-radius: 25px;
   margin: 2rem;
 }
@@ -11,4 +11,5 @@
   filter: brightness(125%);
   outline: none;
   border: 5px solid orangered;
+  padding: calc(1rem - 5px);
 }

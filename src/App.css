@@ -1,12 +1,16 @@
 .App {
-  background-color: #282c34;
+  /* background-color: #282c34; */
+  background-color: white;
   min-height: 100vh;
   font-size: calc(10px + 2vmin);
   color: white;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 1.5rem;
+  box-sizing: border-box;
+  padding: 5px;
 }
 .App:focus {
-  border: 5px solid yellow;
+  border: 5px solid orangered;
+  padding: 0px;
 }
