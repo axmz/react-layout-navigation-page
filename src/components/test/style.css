@@ -1,0 +1,44 @@
+.App {
+  /* background-color: #282c34; */
+  background-color: white;
+  min-height: 100vh;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.5rem;
+  box-sizing: border-box;
+  padding: 5px;
+}
+.App:focus {
+  border: 5px solid orangered;
+  padding: 0px;
+}
+
+.tabbable__level--0 {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: inherit;
+  padding: 1rem;
+  background-color: teal;
+  border-radius: 25px;
+  margin: 2rem;
+}
+.tabbable__level--0:focus {
+  filter: brightness(125%);
+  outline: none;
+  border: 5px solid orangered;
+  padding: calc(1rem - 5px);
+}
+
+.tabbable__level--1 {
+  background-color: plum;
+  border-radius: 15px;
+  padding: 1rem;
+}
+.tabbable__level--1:focus {
+  filter: brightness(125%);
+  outline: none;
+  border: 5px solid orangered;
+  padding: calc(1rem - 5px);
+}

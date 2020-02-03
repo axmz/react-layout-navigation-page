@@ -1,15 +1,32 @@
 import React, { ReactNode } from "react";
-import "./style.css";
+import { HotKeys } from "react-hotkeys";
 
 interface Props {
   children?: ReactNode;
   tabIndex: number;
+  className?: string;
+  callback?: (e: any) => void;
 }
-const Level1: React.FC<Props> = ({ tabIndex, children }) => {
+const Level1: React.FC<Props> = ({ tabIndex, children, callback, ...otherProps }) => {
+  const keyMap = { ENTER: ["enter"] };
+  const handlers = {
+    ENTER: (e: any) => {
+      if (callback) {
+        callback(e);
+      }
+    }
+  };
+
   return (
-    <div tabIndex={tabIndex} className="tabbable__level--1" data-level={1}>
+    <HotKeys
+      keyMap={keyMap}
+      handlers={handlers}
+      tabIndex={tabIndex}
+      data-level={1}
+      {...otherProps}
+    >
       {children}
-    </div>
+    </HotKeys>
   );
 };
 

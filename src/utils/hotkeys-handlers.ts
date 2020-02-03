@@ -1,7 +1,7 @@
 import { RefObject } from "react";
 
 export function levelBelowMove(
-  e: any,
+  e: any, // KeyboardEvent
   step: number,
   ref: RefObject<HTMLElement>
 ) {
