@@ -37,7 +37,7 @@ const Wrapper: React.FC<Props> = ({ children, ...otherProps }) => {
   };
 
   return (
-    <HotKeys innerRef={ref} keyMap={keyMap} handlers={handlers} {...otherProps}>
+    <HotKeys innerRef={ref} keyMap={keyMap} handlers={handlers} data-hotKeysParent={true} {...otherProps}>
       {children}
     </HotKeys>
   );
