@@ -1,12 +1,18 @@
 import { RefObject } from "react";
 
+export interface WithLevel extends HTMLElement {
+  dataset: {
+    level: string
+  }
+}
+
 export function levelBelowMove(
   e: any, // KeyboardEvent
   step: number,
-  ref: RefObject<HTMLElement>
+  ref: RefObject<WithLevel>
 ) {
   e.preventDefault();
-  const parentEl: HTMLElement = ref.current!;
+  const parentEl: WithLevel = ref.current!;
   const parentIdx: number = parentEl.tabIndex;
   let currentIdx:number = e.target.tabIndex;
   const parentLevel: number = parseInt(parentEl.dataset.level ?? "-1");
@@ -30,7 +36,7 @@ export function levelBelowMove(
   } else {
     nextIdx = currentIdx + step;
   }
-  const nextElement = tabbables[nextIdx] as HTMLElement;
+  const nextElement = tabbables[nextIdx] as WithLevel;
   if (nextElement.focus) {
     nextElement.focus();
   }
@@ -39,7 +45,7 @@ export function levelBelowMove(
 export function sameLevelMove(
   e: any,
   step: number,
-  ref: RefObject<HTMLElement>
+  ref: RefObject<WithLevel>
 ) {
   e.preventDefault();
   let currentIdx:number = e.target.tabIndex;
@@ -72,7 +78,7 @@ export function sameLevelMove(
   } else {
     nextIdx = currentIdx + step;
   }
-  const nextElement = tabbables[nextIdx] as HTMLElement;
+  const nextElement = tabbables[nextIdx] as WithLevel;
   nextElement.focus();
 }
 

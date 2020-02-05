@@ -1,6 +1,6 @@
 import React, { ReactNode, useRef } from "react";
 import { HotKeys } from "react-hotkeys";
-import { levelBelowMove } from "../../../utils/hotkeys-handlers";
+import { levelBelowMove, WithLevel } from "../../../utils/hotkeys-handlers";
 
 interface Props {
   children?: ReactNode;
@@ -8,7 +8,7 @@ interface Props {
   className?: string;
 }
 const Level0: React.FC<Props> = ({ children, tabIndex, ...otherProps }) => {
-  const ref = useRef<HTMLElement>(null);
+  const ref = useRef<WithLevel>(null);
 
   const keyMap = {
     NEXT0: ["ctrl+j"],

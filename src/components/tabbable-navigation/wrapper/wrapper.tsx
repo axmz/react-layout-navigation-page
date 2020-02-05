@@ -1,19 +1,24 @@
 import React, { useEffect, useRef, ReactNode } from "react";
 import { HotKeys, configure } from "react-hotkeys";
-import { sameLevelMove, moveBtwLevels } from "../../../utils/hotkeys-handlers";
+import { sameLevelMove, moveBtwLevels, WithLevel } from "../../../utils/hotkeys-handlers";
 
 interface Props {
   children?: ReactNode;
   className?: string;
 }
 
+
 const Wrapper: React.FC<Props> = ({ children, ...otherProps }) => {
-  const ref = useRef<HTMLElement>(null);
+  const ref = useRef<WithLevel>(null);
 
   useEffect(() => {
-    const app = ref.current as HTMLDivElement;
+    const app = ref.current as WithLevel;
     app.focus();
-    configure({  ignoreTags: []})
+    configure({  
+      ignoreTags: [], 
+      stopEventPropagationAfterHandling: false,
+      stopEventPropagationAfterIgnoring: false,
+    })
   }, []);
 
   const keyMap = {
@@ -39,7 +44,7 @@ const Wrapper: React.FC<Props> = ({ children, ...otherProps }) => {
   };
 
   return (
-    <HotKeys innerRef={ref} keyMap={keyMap} handlers={handlers} data-hotkeysparent={true} {...otherProps}>
+    <HotKeys innerRef={ref} keyMap={keyMap} handlers={handlers} data-level={-1} {...otherProps}>
       {children}
     </HotKeys>
   );
