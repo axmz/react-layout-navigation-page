@@ -1,11 +1,14 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode, TextareaHTMLAttributes } from "react";
 import { HotKeys } from "react-hotkeys";
 
-interface Props {
+interface Props  {
   children?: ReactNode;
   tabIndex: number;
   className?: string;
+  component?: string;
   callback?: (e: any) => void;
+  placeholder?: string;
+  defaultValue?: string;
 }
 const Level1: React.FC<Props> = ({ tabIndex, children, callback, ...otherProps }) => {
   const keyMap = { ENTER: ["enter"] };

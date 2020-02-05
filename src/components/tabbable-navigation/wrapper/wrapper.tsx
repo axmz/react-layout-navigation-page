@@ -1,17 +1,19 @@
 import React, { useEffect, useRef, ReactNode } from "react";
-import { HotKeys } from "react-hotkeys";
-import { sameLevelMove, moveBtwLevels } from "../../utils/hotkeys-handlers";
+import { HotKeys, configure } from "react-hotkeys";
+import { sameLevelMove, moveBtwLevels } from "../../../utils/hotkeys-handlers";
 
 interface Props {
   children?: ReactNode;
-  className: string;
+  className?: string;
 }
+
 const Wrapper: React.FC<Props> = ({ children, ...otherProps }) => {
   const ref = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    const app = document.querySelector(".App") as HTMLDivElement;
+    const app = ref.current as HTMLDivElement;
     app.focus();
+    configure({  ignoreTags: []})
   }, []);
 
   const keyMap = {
@@ -37,7 +39,7 @@ const Wrapper: React.FC<Props> = ({ children, ...otherProps }) => {
   };
 
   return (
-    <HotKeys innerRef={ref} keyMap={keyMap} handlers={handlers} data-hotKeysParent={true} {...otherProps}>
+    <HotKeys innerRef={ref} keyMap={keyMap} handlers={handlers} data-hotkeysparent={true} {...otherProps}>
       {children}
     </HotKeys>
   );
