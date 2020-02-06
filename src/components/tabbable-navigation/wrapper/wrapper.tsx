@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, ReactNode } from "react";
 import { HotKeys, configure } from "react-hotkeys";
-import { sameLevelMove, moveBtwLevels, WithLevel } from "../../../handlers";
+import { baseLevelMove, moveBtwLevels, WithLevel } from "../../../handlers";
 
 interface Props {
   children?: ReactNode;
@@ -30,10 +30,10 @@ const Wrapper: React.FC<Props> = ({ children, ...otherProps }) => {
 
   const handlers = {
     NEXT: (e: any) => {
-      sameLevelMove(e, +1, ref);
+      baseLevelMove(e, +1, ref);
     },
     PREV: (e: any) => {
-      sameLevelMove(e, -1, ref);
+      baseLevelMove(e, -1, ref);
     },
     ESC: (e: any) => {
       moveBtwLevels(e, -1);
