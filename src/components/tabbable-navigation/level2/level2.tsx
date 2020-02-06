@@ -1,6 +1,6 @@
 import React, { ReactNode, useRef } from "react";
 import { HotKeys } from "react-hotkeys";
-import {WithLevel, levelBelowMove, sameLevelMove } from "../../../utils/hotkeys-handlers";
+import {WithLevel, levelBelowMove, sameLevelMove } from "../../../handlers";
 
 interface Props {
   children?: ReactNode;
