@@ -22,20 +22,18 @@ const Level2: React.FC<Props> = ({
   const ref = useRef<WithLevel>(null);
 
   const keyMap = {
-    NEXT2: ["ctrl+j"],
-    PREV2: ["ctrl+k"]
+    NEXT2: ["ctrl+j", 'down'],
+    PREV2: ["ctrl+k", 'up']
     // NOTHING2: ["enter"]
   };
 
   const handlers = {
     NEXT0: (e: any) => {
       sameLevelMove(e, +1, ref);
-      // levelBelowMove(e, +1, ref);
     },
     PREV0: (e: KeyboardEvent | undefined): void => {
       if (e) {
         sameLevelMove(e, -1, ref );
-        // levelBelowMove(e, -1, ref);
       }
     }
     // NOTHING0: (e: KeyboardEvent | undefined): void => {

@@ -7,26 +7,27 @@ export default function sameLevelMove(
   ref: RefObject<WithLevel>
 ) {
   e.preventDefault();
-  let currentIdx:number = e.target.tabIndex;
-  const parentLevel: number = 0;
-  let currentLevel: number = parseInt(e.target.dataset.level ?? "-1");
-  const parentEl = ref.current!
-  const parentIdx: number = parentEl.tabIndex;
-
+  // const currentEl: WithLevel = e.target;
+  // const baseLevel: number = parseInt(currentEl.dataset.level);
+  const currentEl: WithLevel = ref.current!;
+  const currentLevel: number = parseInt(currentEl.dataset.level);
+  let currentIdx: number = currentEl.tabIndex;
+  let parentLevel = currentLevel - 1;
   debugger;
-  if (currentLevel === -1) {
-    currentLevel = 0;
-    currentIdx = -1;
+
+  interface K extends Element {
+    dataset?: {level: string}
   }
-  
-  if (currentLevel > parentLevel) {
-    currentIdx = e.target.parentElement.tabIndex
-  }
-  
-  // debugger;
+
+  let parentEl = e.nativeEvent.path.find((el: K) => {
+    if (el.dataset && el.dataset.level) {
+      return parseInt(el.dataset.level) === parentLevel;
+    }
+    return false;
+  })
 
   const tabbables = parentEl.querySelectorAll(
-    `[data-level="${parentLevel}"][tabIndex]`
+    `[data-level="${currentLevel}"][tabIndex]`
   );
 
   const l = tabbables.length;

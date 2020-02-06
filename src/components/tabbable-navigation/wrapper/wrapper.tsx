@@ -16,14 +16,14 @@ const Wrapper: React.FC<Props> = ({ children, ...otherProps }) => {
     app.focus();
     configure({  
       ignoreTags: [], 
-      stopEventPropagationAfterHandling: false,
-      stopEventPropagationAfterIgnoring: false,
+      // stopEventPropagationAfterHandling: false,
+      // stopEventPropagationAfterIgnoring: false,
     })
   }, []);
 
   const keyMap = {
-    NEXT: ["ctrl+l", "tab"],
-    PREV: ["ctrl+h", "shift+tab"],
+    NEXT: ["l", "tab" ],
+    PREV: ["h", "shift+tab"],
     ESC: ["esc"],
     NOTHING: ["ctrl+j", "ctrl+k"]
   };

@@ -12,6 +12,7 @@ export default function levelBelowMove(
   let currentIdx:number = e.target.tabIndex;
   const parentLevel: number = parseInt(parentEl.dataset.level ?? "-1");
   const currentLevel: number = parseInt(e.target.dataset.level ?? "-1");
+  debugger;
   
 
   if (currentLevel === parentLevel) {

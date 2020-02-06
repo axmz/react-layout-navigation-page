@@ -11,8 +11,8 @@ const Level0: React.FC<Props> = ({ children, tabIndex, ...otherProps }) => {
   const ref = useRef<WithLevel>(null);
 
   const keyMap = {
-    NEXT0: ["ctrl+j"],
-    PREV0: ["ctrl+k"],
+    NEXT0: ["ctrl+j", 'down'],
+    PREV0: ["ctrl+k", 'up'],
     NOTHING0: ["enter"]
   };
 

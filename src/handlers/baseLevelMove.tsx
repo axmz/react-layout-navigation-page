@@ -11,6 +11,7 @@ export default function baseLevelMove(
   const currentEl: WithLevel = e.target;
   let currentLevel: number = parseInt(currentEl.dataset.level);
   let currentIdx: number;
+  debugger;
   if (currentLevel === -1) {
     currentLevel = 0;
     currentIdx = -1;

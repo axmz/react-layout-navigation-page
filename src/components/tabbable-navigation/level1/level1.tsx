@@ -12,6 +12,7 @@ interface Props  {
   placeholder?: string;
   defaultValue?: string;
 }
+
 const Level1: React.FC<Props> = ({ tabIndex, children, callback, ...otherProps }) => {
   const ref = useRef<WithLevel>(null);
   const keyMap = { ENTER: ["enter"] };
