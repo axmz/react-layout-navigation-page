@@ -9,6 +9,7 @@ export type WithLevel<K = HTMLElement> = {
 
 export type WithAttributes<T extends HTMLElement> = {
   "data-level": number;
+  preventDefault: boolean;
   ref: RefObject<T>;
 } & HTMLAttributes<T>;
 

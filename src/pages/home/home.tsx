@@ -78,16 +78,7 @@ const Home = () => {
               "Use tab, ctrl+j, ctrl+k, esc and enter to see how easy it is to navigate. \n\nFor more scroll down."
             }
           ></Level1>
-          <Level1 tabIndex={1} className={styles.ms} component={"select"}>
-            <LevelNext tabIndex={0} component={"option"}>
-              BMW
-            </LevelNext>
-            <LevelNext tabIndex={1} component={"option"}>
-              BbW
-            </LevelNext>
-            <LevelNext tabIndex={2} component={"option"}>
-              BnW
-            </LevelNext>
+          <Level1 tabIndex={1} className={styles.ms} component={"select"} preventDefault={false}>
             <option value="mercedes" tabIndex={0}>
               Mercedes
             </option>

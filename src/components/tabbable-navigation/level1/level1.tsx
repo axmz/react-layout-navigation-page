@@ -1,22 +1,23 @@
 import React, { useRef, HtmlHTMLAttributes, ElementType, useEffect } from "react";
-import { WithLevel, Props, WithAttributes, levelBelowMove, moveBtwLevels } from "../../../handlers";
+import { WithLevel, Props, WithAttributes, levelBelowMove, levelsMove } from "../../../handlers";
 
 const Level1: React.FC<Props> = ({
   component,
   children,
+  preventDefault,
   ...otherProps
 }) => {
   const ref = useRef<WithLevel<HTMLElement>>(null);
+  const props = {preventDefault}
   const handler = (e: KeyboardEvent) => {
     // enter
     if (e.keyCode === 13 && !e.ctrlKey) {
-      // e.stopPropagation()
-      moveBtwLevels(e, +1)
+      levelsMove(e, +1, props)
       return
     }
     // esc
     if (e.keyCode === 27) {
-      moveBtwLevels(e, -1)
+      levelsMove(e, -1, props)
       return
     }
   };

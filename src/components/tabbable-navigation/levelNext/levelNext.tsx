@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from "react";
-import { WithLevel, Props, moveBtwLevels, sameLevelMove } from "../../../handlers";
+import { WithLevel, Props, levelsMove, sameLevelMove } from "../../../handlers";
 
 const LevelNext: React.FC<Props> = ({
   component,
@@ -20,12 +20,12 @@ const LevelNext: React.FC<Props> = ({
     }
     // enter
     if (e.keyCode === 13 && !e.ctrlKey) {
-      moveBtwLevels(e, +1)
+      levelsMove(e, +1)
       return
     }
     // esc
     if (e.keyCode === 27) {
-      moveBtwLevels(e, -1)
+      levelsMove(e, -1)
       return
     }
   };

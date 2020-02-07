@@ -1,7 +1,15 @@
 import { WithLevel } from ".";
 
-export function moveBtwLevels(e: any, step: number) {
-  e.preventDefault();
+export function levelsMove(
+  e: any,
+  step: number,
+  props?: { preventDefault?: boolean }
+) {
+  if (props) {
+    if (props?.preventDefault === true || !("preventDefault" in props)) {
+      e.preventDefault();
+    }
+  }
   e.stopPropagation();
   const currentEl = e.target;
   let currentLevel = parseInt(currentEl.dataset.level);
