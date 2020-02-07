@@ -19,16 +19,19 @@ const Level0: React.FC<Props> = ({ children, tabIndex, ...otherProps }) => {
   const handlers = {
     NEXT0: (e: any) => {
       levelBelowMove(e, +1, ref);
+      return
     },
     PREV0: (e: KeyboardEvent | undefined): void => {
       if (e) {
         levelBelowMove(e, -1, ref);
       }
+      return
     },
     NOTHING0: (e: KeyboardEvent | undefined): void => {
       if (e) {
         e.preventDefault();
       }
+      return
     }
   };
 

@@ -8,7 +8,7 @@ export default function levelBelowMove(
 ) {
   e.preventDefault();
   const parentEl: WithLevel = ref.current!;
-  const parentIdx: number = parentEl.tabIndex;
+  // const parentIdx: number = parentEl.tabIndex;
   let currentIdx:number = e.target.tabIndex;
   const parentLevel: number = parseInt(parentEl.dataset.level ?? "-1");
   const currentLevel: number = parseInt(e.target.dataset.level ?? "-1");
@@ -32,7 +32,7 @@ export default function levelBelowMove(
   } else {
     nextIdx = currentIdx + step;
   }
-  const nextElement = tabbables[nextIdx] as WithLevel;
+  const nextElement = tabbables[nextIdx] as HTMLElement;
   if (nextElement.focus) {
     nextElement.focus();
   }

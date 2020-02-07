@@ -30,11 +30,13 @@ const Level2: React.FC<Props> = ({
   const handlers = {
     NEXT0: (e: any) => {
       sameLevelMove(e, +1, ref);
+      return
     },
     PREV0: (e: KeyboardEvent | undefined): void => {
       if (e) {
         sameLevelMove(e, -1, ref );
       }
+      return
     }
     // NOTHING0: (e: KeyboardEvent | undefined): void => {
     //   if (e) {

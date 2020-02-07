@@ -22,7 +22,9 @@ const Level1: React.FC<Props> = ({ tabIndex, children, callback, ...otherProps }
         callback(e);
       } else {
         levelBelowMove(e, 1, ref)
+
       }
+      return
     }
   };
 

@@ -1,5 +1,5 @@
-export interface WithLevel extends HTMLElement {
+export type WithLevel = {
   dataset: {
     level: string;
   };
-}
+} & HTMLElement

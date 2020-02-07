@@ -16,8 +16,8 @@ const Wrapper: React.FC<Props> = ({ children, ...otherProps }) => {
     app.focus();
     configure({  
       ignoreTags: [], 
-      // stopEventPropagationAfterHandling: false,
-      // stopEventPropagationAfterIgnoring: false,
+      stopEventPropagationAfterHandling: false,
+      stopEventPropagationAfterIgnoring: false,
     })
   }, []);
 
@@ -31,15 +31,19 @@ const Wrapper: React.FC<Props> = ({ children, ...otherProps }) => {
   const handlers = {
     NEXT: (e: any) => {
       baseLevelMove(e, +1, ref);
+      return
     },
     PREV: (e: any) => {
       baseLevelMove(e, -1, ref);
+      return
     },
     ESC: (e: any) => {
       moveBtwLevels(e, -1);
+      return
     },
     NOTHING: (e: any) => {
       e.preventDefault();
+      return
     }
   };
 
