@@ -20,24 +20,11 @@ const Level2: React.FC<Props> = ({
     }
   };
 
-<<<<<<< HEAD
-  const handlers = {
-    NEXT0: (e: any) => {
-      sameLevelMove(e, +1, ref);
-      return
-    },
-    PREV0: (e: KeyboardEvent | undefined): void => {
-      if (e) {
-        sameLevelMove(e, -1, ref );
-      }
-      return
-=======
   useEffect(() => {
     const app = ref.current;
     if (app) {
       app.focus();
       app.addEventListener("keydown", handler);
->>>>>>> change-framework
     }
     return () => {
       app?.removeEventListener("keydown", handler);

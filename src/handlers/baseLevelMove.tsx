@@ -7,15 +7,11 @@ export default function baseLevelMove(
   ref: RefObject<WithLevel>
 ) {
   e.preventDefault();
-  e.nativeEvent.stopPropagation()
   const baseLevel: number = 0;
   const currentEl: WithLevel = e.target;
   let currentLevel: number = parseInt(currentEl.dataset.level);
   let currentIdx: number;
-<<<<<<< HEAD
-=======
   // debugger;
->>>>>>> change-framework
   if (currentLevel === -1) {
     currentLevel = 0;
     currentIdx = -1;
@@ -40,13 +36,8 @@ export default function baseLevelMove(
   } else {
     nextIdx = currentIdx + step;
   }
-<<<<<<< HEAD
-  const nextElement = tabbables[nextIdx] as HTMLElement;
-  nextElement.focus();
-=======
   const nextElement = tabbables[nextIdx] as WithLevel<HTMLElement>;
     nextElement.focus();
->>>>>>> change-framework
   // focus first child
   // const firstArr = Array.from(nextElement.children) as HTMLElement[];
   // const first = firstArr.find((el: HTMLElement) => {

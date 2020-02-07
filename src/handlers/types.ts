@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-export type WithLevel = {
-  dataset: {
-    level: string;
-  };
-} & HTMLElement
-=======
 import { ComponentPropsWithRef, HTMLAttributes, RefObject, ElementType } from "react";
 
 export type WithLevel<K = Element> = {
@@ -24,4 +17,3 @@ export type Props = {
   component?: string;
 } & ComponentPropsWithRef<ElementType>
 
->>>>>>> change-framework
