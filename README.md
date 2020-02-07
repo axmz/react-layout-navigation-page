@@ -10,9 +10,10 @@ rewrite handlers + cb support
 <!-- choose type of element div/input...   -->
 <!-- footer apears on click   -->
 <!-- one more level for <select>   -->
-change click simulator
+<!-- change click simulator -->
 add arrows  
 full screen simulate  
+change tabs simulate/how to insall  
 <!-- try to avoid ref and see what happens   -->
 is ref necessary?  
 <!-- try to return in hotkeys example   -->

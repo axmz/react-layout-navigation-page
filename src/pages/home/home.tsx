@@ -5,6 +5,11 @@ import { ReactComponent as HomeSvg } from "./assets/home-solid.svg";
 import { ReactComponent as LockSvg } from "./assets/lock-solid.svg";
 import { ReactComponent as CogsSvg } from "./assets/cogs-solid.svg";
 import { ReactComponent as Html5Svg } from "./assets/html5-brands.svg";
+
+import { ReactComponent as Archive } from "./assets/archive-solid.svg";
+import { ReactComponent as Chart } from "./assets/chart-line-solid.svg";
+import { ReactComponent as Diagram } from "./assets/project-diagram-solid.svg";
+import { ReactComponent as Table } from "./assets/table-solid.svg";
 import LevelNext from "../../components/tabbable-navigation/levelNext/levelNext";
 
 const Home = () => {
@@ -57,16 +62,16 @@ const Home = () => {
         </Level0>
         <Level0 tabIndex={1} className={styles.header}>
           <Level1 tabIndex={0} className={styles.hdr} callback={clickCallBack}>
-            10
+            <Chart/>
           </Level1>
           <Level1 tabIndex={1} className={styles.hdr} callback={clickCallBack}>
-            11
+            <Diagram/>
           </Level1>
           <Level1 tabIndex={2} className={styles.hdr} callback={clickCallBack}>
-            12
+            <Table/>
           </Level1>
           <Level1 tabIndex={3} className={styles.hdr} callback={clickCallBack}>
-            13
+            <Archive/>
           </Level1>
         </Level0>
         <Level0 tabIndex={2} className={styles.main}>

@@ -1,9 +1,7 @@
-import { WithLevel } from ".";
-
 export function levelsMove(
   e: any,
   step: number,
-  props?: { preventDefault?: boolean }
+  props?: { preventDefault?: boolean; callback?: (e: any) => void }
 ) {
   if (props) {
     if (props?.preventDefault === true || !("preventDefault" in props)) {
@@ -28,7 +26,10 @@ export function levelsMove(
       const nextElement = tabbables[0];
       nextElement.focus();
     } else {
-      // do nothing
+      // callback
+        if (props?.callback) {
+          props.callback(e);
+        }
     }
   } else if (step < 0) {
     tabbables = parentParentEl.querySelectorAll(

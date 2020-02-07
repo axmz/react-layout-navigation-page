@@ -5,10 +5,11 @@ const Level1: React.FC<Props> = ({
   component,
   children,
   preventDefault,
+  callback,
   ...otherProps
 }) => {
   const ref = useRef<WithLevel<HTMLElement>>(null);
-  const props = {preventDefault}
+  const props = {preventDefault, callback}
   const handler = (e: KeyboardEvent) => {
     // enter
     if (e.keyCode === 13 && !e.ctrlKey) {
