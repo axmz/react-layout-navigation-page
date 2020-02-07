@@ -2,18 +2,20 @@ import { WithLevel } from ".";
 
 export function moveBtwLevels(e: any, step: number) {
   e.preventDefault();
+  e.stopPropagation();
   const currentEl = e.target;
   let currentLevel = parseInt(currentEl.dataset.level);
   const parentLevel = currentLevel === -1 ? -1 : currentLevel - 1;
   const parentParentLevel = parentLevel === -1 ? -1 : parentLevel - 1;
-  const parentEl = e.nativeEvent.path.find(
-    (el: WithLevel) => parseInt(el.dataset.level) === parentLevel
+  const parentEl = e.path.find(
+    (el: WithLevel<HTMLElement>) => parseInt(el.dataset.level) === parentLevel
   );
-  const parentParentEl = e.nativeEvent.path.find(
-    (el: WithLevel) => parseInt(el.dataset.level) === parentParentLevel
+  const parentParentEl = e.path.find(
+    (el: WithLevel<HTMLElement>) => parseInt(el.dataset.level) === parentParentLevel
   );
   const parentIndex = parentEl.tabIndex;
   const next = currentLevel + step;
+  debugger;
   let tabbables = [];
   if (step > 0) {
     tabbables = currentEl.querySelectorAll(`[data-level="${next}"]`);
@@ -28,6 +30,7 @@ export function moveBtwLevels(e: any, step: number) {
     const nextElement = tabbables[0];
     nextElement.focus();
   } else {
-    parentParentEl.focus();
+    // do nothing
+    // parentEl.focus();
   }
 }

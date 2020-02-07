@@ -4,12 +4,12 @@ import { WithLevel } from "../handlers";
 export default function sameLevelMove(
   e: any,
   step: number,
-  ref: RefObject<WithLevel>
+  ref: RefObject<WithLevel<HTMLDivElement>>
 ) {
   e.preventDefault();
   // const currentEl: WithLevel = e.target;
   // const baseLevel: number = parseInt(currentEl.dataset.level);
-  const currentEl: WithLevel = ref.current!;
+  const currentEl: WithLevel<HTMLDivElement> = ref.current!;
   const currentLevel: number = parseInt(currentEl.dataset.level);
   let currentIdx: number = currentEl.tabIndex;
   let parentLevel = currentLevel - 1;
@@ -39,7 +39,7 @@ export default function sameLevelMove(
   } else {
     nextIdx = currentIdx + step;
   }
-  const nextElement = tabbables[nextIdx] as WithLevel;
+  const nextElement = tabbables[nextIdx] as WithLevel<HTMLDivElement>;
   nextElement.focus();
 }
 
