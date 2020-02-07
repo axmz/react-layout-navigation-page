@@ -1,13 +1,13 @@
 import { ComponentPropsWithRef, HTMLAttributes, RefObject, ElementType } from "react";
 
-export type WithLevel<K = Element> = {
+export type WithLevel<K = HTMLElement> = {
   dataset: {
     level: string;
   };
   ref: RefObject<K>;
 } & K;
 
-export type WithAttributes<T extends Element> = {
+export type WithAttributes<T extends HTMLElement> = {
   "data-level": number;
   ref: RefObject<T>;
 } & HTMLAttributes<T>;

@@ -9,6 +9,7 @@ export default function baseLevelMove(
   e.preventDefault();
   const baseLevel: number = 0;
   const currentEl: WithLevel = e.target;
+  const baseEl = currentEl.closest(`[data-level="${baseLevel}"]`) as WithLevel;
   let currentLevel: number = parseInt(currentEl.dataset.level);
   let currentIdx: number;
   // debugger;
@@ -16,12 +17,7 @@ export default function baseLevelMove(
     currentLevel = 0;
     currentIdx = -1;
   } else {
-    currentIdx = e.path.find((el: HTMLElement) => {
-      if (el.dataset.level) {
-        return parseInt(el.dataset.level) === baseLevel;
-      }
-      return false;
-    }).tabIndex;
+    currentIdx = baseEl.tabIndex
   }
   const parentEl: WithLevel = ref.current!;
 

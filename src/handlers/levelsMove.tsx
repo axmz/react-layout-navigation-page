@@ -26,6 +26,6 @@ export function moveBtwLevels(e: any, step: number) {
     nextElement.focus();
   } else {
     // do nothing
-    // parentEl.focus();
+    parentEl.focus();
   }
 }

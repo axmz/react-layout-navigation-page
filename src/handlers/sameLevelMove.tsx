@@ -19,7 +19,7 @@ export default function sameLevelMove(
     dataset?: {level: string}
   }
 
-  let parentEl = e.nativeEvent.path.find((el: K) => {
+  let parentEl = e.path.find((el: K) => {
     if (el.dataset && el.dataset.level) {
       return parseInt(el.dataset.level) === parentLevel;
     }
