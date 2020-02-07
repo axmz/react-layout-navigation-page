@@ -32,9 +32,11 @@ export default function baseLevelMove(
   } else {
     nextIdx = currentIdx + step;
   }
-  const nextElement = tabbables[nextIdx] as WithLevel<HTMLElement>;
+  const nextElement = tabbables[nextIdx] as WithLevel;
+  if (nextElement) {
     nextElement.focus();
-  // focus first child
+  }
+  // // focus first child - doesnt work well
   // const firstArr = Array.from(nextElement.children) as HTMLElement[];
   // const first = firstArr.find((el: HTMLElement) => {
   //   if (el.dataset && el.dataset.level) {

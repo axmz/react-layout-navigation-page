@@ -30,7 +30,9 @@ export default function levelBelowMove(
   } else {
     nextIdx = currentIdx + step;
   }
-  const nextElement = tabbables[nextIdx] as WithLevel<HTMLElement>;
-  nextElement.focus();
+  const nextElement = tabbables[nextIdx] as WithLevel;
+  if (nextElement) {
+    nextElement.focus();
+  }
 }
 

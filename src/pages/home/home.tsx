@@ -5,7 +5,7 @@ import { ReactComponent as HomeSvg } from "./assets/home-solid.svg";
 import { ReactComponent as LockSvg } from "./assets/lock-solid.svg";
 import { ReactComponent as CogsSvg } from "./assets/cogs-solid.svg";
 import { ReactComponent as Html5Svg } from "./assets/html5-brands.svg";
-import Level2 from "../../components/tabbable-navigation/level2/level2";
+import LevelNext from "../../components/tabbable-navigation/levelNext/levelNext";
 
 const Home = () => {
   const clickCallBack = (e: any) => {
@@ -26,15 +26,23 @@ const Home = () => {
           </div>
           <div className={styles.lines}>
             <Level1 tabIndex={0} className={styles.line}>
-              <Level2 tabIndex={0} data-level={2}>
-                0
-              </Level2>
-              <Level2 tabIndex={1} data-level={2}>
+              <LevelNext tabIndex={0} data-level={2}>
+                <LevelNext tabIndex={0} data-level={3}>
+                  n0
+                </LevelNext>
+                <LevelNext tabIndex={1} data-level={3}>
+                  n1
+                </LevelNext>
+                <LevelNext tabIndex={2} data-level={3}>
+                  n2
+                </LevelNext>
+              </LevelNext>
+              <LevelNext tabIndex={1} data-level={2}>
                 1
-              </Level2>
-              <Level2 tabIndex={2} data-level={2}>
+              </LevelNext>
+              <LevelNext tabIndex={2} data-level={2}>
                 2
-              </Level2>
+              </LevelNext>
             </Level1>
             <Level1 tabIndex={1} className={styles.line}>
               02
@@ -71,15 +79,15 @@ const Home = () => {
             }
           ></Level1>
           <Level1 tabIndex={1} className={styles.ms} component={"select"}>
-            <Level2 tabIndex={0} component={"option"}>
+            <LevelNext tabIndex={0} component={"option"}>
               BMW
-            </Level2>
-            <Level2 tabIndex={1} component={"option"}>
+            </LevelNext>
+            <LevelNext tabIndex={1} component={"option"}>
               BbW
-            </Level2>
-            <Level2 tabIndex={2} component={"option"}>
+            </LevelNext>
+            <LevelNext tabIndex={2} component={"option"}>
               BnW
-            </Level2>
+            </LevelNext>
             <option value="mercedes" tabIndex={0}>
               Mercedes
             </option>

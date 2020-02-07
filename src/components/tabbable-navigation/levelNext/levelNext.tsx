@@ -1,13 +1,23 @@
 import React, { useRef, useEffect } from "react";
-import { WithLevel, Props, moveBtwLevels } from "../../../handlers";
+import { WithLevel, Props, moveBtwLevels, sameLevelMove } from "../../../handlers";
 
-const Level2: React.FC<Props> = ({
+const LevelNext: React.FC<Props> = ({
   component,
   children,
   ...otherProps
 }) => {
-  const ref = useRef<WithLevel<HTMLElement>>(null);
+  const ref = useRef<WithLevel>(null);
   const handler = (e: KeyboardEvent) => {
+    // ctrl+j
+    if (!e.shiftKey && e.ctrlKey && e.keyCode === 74) {
+      sameLevelMove(e, +1, ref)
+      return
+    }
+    // ctrl+k
+    if (!e.shiftKey && e.ctrlKey && e.keyCode === 75) {
+      sameLevelMove(e, -1, ref)
+      return
+    }
     // enter
     if (e.keyCode === 13 && !e.ctrlKey) {
       moveBtwLevels(e, +1)
@@ -43,4 +53,4 @@ const Level2: React.FC<Props> = ({
   );
 };
 
-export default Level2;
+export default LevelNext;
