@@ -1,59 +1,45 @@
-import React, { ReactNode, useRef } from "react";
-import { HotKeys } from "react-hotkeys";
-import {WithLevel, levelBelowMove, sameLevelMove } from "../../../handlers";
-
-interface Props {
-  children?: ReactNode;
-  tabIndex: number;
-  className?: string;
-  component?: string;
-  callback?: (e: any) => void;
-  placeholder?: string;
-  defaultValue?: string;
-}
+import React, { useRef, useEffect } from "react";
+import { WithLevel, Props, moveBtwLevels } from "../../../handlers";
 
 const Level2: React.FC<Props> = ({
-  tabIndex,
+  component,
   children,
-  callback,
   ...otherProps
 }) => {
-
-  const ref = useRef<WithLevel>(null);
-
-  const keyMap = {
-    NEXT2: ["ctrl+j", 'down'],
-    PREV2: ["ctrl+k", 'up']
-    // NOTHING2: ["enter"]
-  };
-
-  const handlers = {
-    NEXT0: (e: any) => {
-      sameLevelMove(e, +1, ref);
-    },
-    PREV0: (e: KeyboardEvent | undefined): void => {
-      if (e) {
-        sameLevelMove(e, -1, ref );
-      }
+  const ref = useRef<WithLevel<HTMLElement>>(null);
+  const handler = (e: KeyboardEvent) => {
+    // enter
+    if (e.keyCode === 13 && !e.ctrlKey) {
+      moveBtwLevels(e, +1)
+      return
     }
-    // NOTHING0: (e: KeyboardEvent | undefined): void => {
-    //   if (e) {
-    //     e.preventDefault();
-    //   }
-    // }
+    // esc
+    if (e.keyCode === 27) {
+      moveBtwLevels(e, -1)
+      return
+    }
   };
 
-  return (
-    <HotKeys
-      innerRef={ref}
-      keyMap={keyMap}
-      handlers={handlers}
-      tabIndex={tabIndex}
-      data-level={2}
-      {...otherProps}
-    >
-      {children}
-    </HotKeys>
+  useEffect(() => {
+    const app = ref.current;
+    if (app) {
+      app.focus();
+      app.addEventListener("keydown", handler);
+    }
+    return () => {
+      app?.removeEventListener("keydown", handler);
+    };
+  }, []);
+
+  let c = component ? component : "div" 
+  return React.createElement(
+    c,
+    {
+      ref,
+      'data-level': 2,
+      ...otherProps
+    },
+    children
   );
 };
 

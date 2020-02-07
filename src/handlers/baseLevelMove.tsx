@@ -11,12 +11,12 @@ export default function baseLevelMove(
   const currentEl: WithLevel = e.target;
   let currentLevel: number = parseInt(currentEl.dataset.level);
   let currentIdx: number;
-  debugger;
+  // debugger;
   if (currentLevel === -1) {
     currentLevel = 0;
     currentIdx = -1;
   } else {
-    currentIdx = e.nativeEvent.path.find((el: HTMLElement) => {
+    currentIdx = e.path.find((el: HTMLElement) => {
       if (el.dataset.level) {
         return parseInt(el.dataset.level) === baseLevel;
       }
@@ -36,8 +36,8 @@ export default function baseLevelMove(
   } else {
     nextIdx = currentIdx + step;
   }
-  const nextElement = tabbables[nextIdx] as WithLevel;
-  nextElement.focus();
+  const nextElement = tabbables[nextIdx] as WithLevel<HTMLElement>;
+    nextElement.focus();
   // focus first child
   // const firstArr = Array.from(nextElement.children) as HTMLElement[];
   // const first = firstArr.find((el: HTMLElement) => {

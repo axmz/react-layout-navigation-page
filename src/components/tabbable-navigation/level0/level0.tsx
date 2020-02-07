@@ -1,48 +1,56 @@
-import React, { ReactNode, useRef } from "react";
-import { HotKeys } from "react-hotkeys";
-import { levelBelowMove, WithLevel } from "../../../handlers";
+import React, { useRef, useEffect } from "react";
+import { WithLevel, Props, levelBelowMove, moveBtwLevels } from "../../../handlers";
 
-interface Props {
-  children?: ReactNode;
-  tabIndex: number;
-  className?: string;
-}
-const Level0: React.FC<Props> = ({ children, tabIndex, ...otherProps }) => {
-  const ref = useRef<WithLevel>(null);
+const Level0: React.FC<Props> = ({
+  component,
+  children,
+  ...otherProps
+}) => {
+  const ref = useRef<WithLevel<HTMLDivElement>>(null);
 
-  const keyMap = {
-    NEXT0: ["ctrl+j", 'down'],
-    PREV0: ["ctrl+k", 'up'],
-    NOTHING0: ["enter"]
-  };
-
-  const handlers = {
-    NEXT0: (e: any) => {
-      levelBelowMove(e, +1, ref);
-    },
-    PREV0: (e: KeyboardEvent | undefined): void => {
-      if (e) {
-        levelBelowMove(e, -1, ref);
-      }
-    },
-    NOTHING0: (e: KeyboardEvent | undefined): void => {
-      if (e) {
-        e.preventDefault();
-      }
+  const handler = (e: KeyboardEvent) => {
+    // ctrl+j
+    if (!e.shiftKey && e.ctrlKey && e.keyCode === 74) {
+      levelBelowMove(e, +1, ref)
+      return
+    }
+    // ctrl+k
+    if (!e.shiftKey && e.ctrlKey && e.keyCode === 75) {
+      levelBelowMove(e, -1, ref)
+      return
+    }
+    // enter
+    if (e.keyCode === 13 && !e.ctrlKey) {
+      moveBtwLevels(e, +1)
+      return
+    }
+    // esc
+    if (e.keyCode === 27) {
+      moveBtwLevels(e, -1)
+      return
     }
   };
 
-  return (
-    <HotKeys
-      innerRef={ref}
-      keyMap={keyMap}
-      handlers={handlers}
-      tabIndex={tabIndex}
-      data-level={0}
-      {...otherProps}
-    >
-      {children}
-    </HotKeys>
+  useEffect(() => {
+    const app = ref.current;
+    if (app) {
+      app.focus();
+      app.addEventListener("keydown", handler);
+    }
+    return () => {
+      app?.removeEventListener("keydown", handler);
+    };
+  }, []);
+
+  let c = component ? component : "div" 
+  return React.createElement(
+    c,
+    {
+      ref,
+      'data-level': 0,
+      ...otherProps
+    },
+    children
   );
 };
 

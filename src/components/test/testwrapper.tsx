@@ -5,7 +5,7 @@ import './style.css'
 const TestWrapper: React.FC<{children: ReactNode}> = ({children}) => {
 
   return ( 
-  <Wrapper className="App">
+  <Wrapper tabIndex={-1} className="App">
       {children}
   </Wrapper>
  )
