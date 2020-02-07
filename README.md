@@ -14,5 +14,6 @@ change click simulator
 add arrows  
 full screen simulate  
 try to avoid ref and see what happens  
-try to return in hotkeys example  
+<!-- try to return in hotkeys example   -->
+try .closest  
 
