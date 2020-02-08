@@ -20,8 +20,9 @@ change tabs simulate/how to insall
 <!-- try .closest   -->
 <!-- add custom shortcuts, ex: / for input   -->
 <!-- make subline appear when line is focused   -->
-add handlerprops to every handler  
-fix no mixed operators  
-put all handlers in onkeydown  
-fix click sim  
+<!-- add handlerprops to every handler   -->
+<!-- fix no mixed operators   -->
+<!-- put all handlers in onkeydown   -->
+<!-- fix click sim   -->
+put stopPropagation validation to every handler  
 

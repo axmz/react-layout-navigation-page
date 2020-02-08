@@ -1,12 +1,16 @@
 import React, { useRef, useEffect } from "react";
-import { WithLevel, Props, levelsMove, sameLevelMove } from "../../../handlers";
+import { WithLevel, Props, levelsMove, sameLevelMove, HandlerProps } from "../../../handlers";
 
 const LevelNext: React.FC<Props> = ({
   component,
+  preventDefault,
+  callback,
+  stopPropagation,
   children,
   ...otherProps
 }) => {
   const ref = useRef<WithLevel>(null);
+  const props: HandlerProps = { preventDefault, callback, stopPropagation };
   const handler = (e: KeyboardEvent) => {
     // ctrl+j
     if (!e.shiftKey && e.ctrlKey && e.keyCode === 74) {
@@ -20,12 +24,13 @@ const LevelNext: React.FC<Props> = ({
     }
     // enter / ctrl+l
     if ((e.keyCode === 13 && !e.ctrlKey) || (!e.shiftKey && e.ctrlKey && e.keyCode === 76)) {
-      levelsMove(e, +1)
+          console.log('ppp', props)
+      levelsMove(e, +1, props)
       return
     }
     // esc / ctrl+h
     if (e.keyCode === 27 || (!e.shiftKey && e.ctrlKey && e.keyCode === 72)) {
-      levelsMove(e, -1)
+      levelsMove(e, -1, props)
       return
     }
   };

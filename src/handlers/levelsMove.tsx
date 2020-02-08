@@ -1,23 +1,29 @@
 import { HandlerProps } from "../handlers";
 
-export function levelsMove(e: any, step: -1 | 1, props?: HandlerProps) {
+export function levelsMove(e: any, step: -1 | 1, props: HandlerProps) {
 
+  console.log('e', e)
+  console.log('in', !props?.preventDefault) 
+  console.log('undef', props?.preventDefault === undefined )
+  console.log('true' ,props?.preventDefault === true)
   if (
     !props ||
-    !("preventDefault" in props) ||
+    !props.preventDefault ||
     props.preventDefault === undefined ||
     props.preventDefault === true
   ) {
-    e.preventDefault();
+    // e.preventDefault();
   }
-
+  console.log('in', !props?.stopPropagation) 
+  console.log('undef', props?.stopPropagation === undefined )
+  console.log('true' ,props?.stopPropagation === true)
   if (
     !props ||
-    !("stopPropagation" in props) ||
+    !props.stopPropagation ||
     props.stopPropagation === undefined ||
     props.stopPropagation === true
   ) {
-    e.stopPropagation();
+    // e.stopPropagation();
   }
 
   const currentEl = e.target;

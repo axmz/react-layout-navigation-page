@@ -25,7 +25,7 @@ export type Props = {
 } & ComponentPropsWithRef<ElementType>;
 
 export interface HandlerProps {
-  preventDefault?: boolean;
-  stopPropagation?: boolean;
-  callback?: (e: any) => void;
+  preventDefault: boolean;
+  stopPropagation: boolean;
+  callback: (e: any) => void;
 }
