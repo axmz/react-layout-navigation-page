@@ -14,7 +14,7 @@ const Level1: React.FC<Props> = ({
   callback,
   ...otherProps
 }) => {
-  // const ref = useRef<WithLevel>(null);
+  const ref = useRef<WithLevel>(null);
   const props = { preventDefault, callback, stopPropagation };
   const handler = useCallback(
     (e: KeyboardEvent) => {
@@ -35,21 +35,22 @@ const Level1: React.FC<Props> = ({
     [props]
   );
 
-  // useEffect(() => {
-  //   const app = ref.current;
-  //   if (app) {
-  //     app.focus();
-  //     app.addEventListener("keydown", handler);
-  //   }
-  //   return () => {
-  //     app?.removeEventListener("keydown", handler);
-  //   };
-  // }, [ref, handler]);
+  useEffect(() => {
+    const app = ref.current;
+    if (app) {
+      app.focus();
+      app.addEventListener("keydown", handler);
+    }
+    return () => {
+      app?.removeEventListener("keydown", handler);
+    };
+  }, [ref, handler]);
 
   let c = component ? component : "div";
   return React.createElement<WithAttributes<WithLevel>, WithLevel>(
     c,
     {
+      ref,
       "data-level": 1,
       ...otherProps,
     },
