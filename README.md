@@ -4,19 +4,21 @@
 <!-- fast pressing fires native actions   -->
 <!-- contain styles   -->
 <!-- bring handlers to level folders?   -->
-rewrite handlers + cb support  
+<!-- rewrite handlers + cb support   -->
 <!-- focus on 1st   -->
 <!-- find parend func   -->
 <!-- choose type of element div/input...   -->
 <!-- footer apears on click   -->
 <!-- one more level for <select>   -->
 <!-- change click simulator -->
-add arrows  
+<!-- add arrows   -->
 full screen simulate  
 change tabs simulate/how to insall  
 <!-- try to avoid ref and see what happens   -->
-is ref necessary?  
+<!-- is ref necessary?   -->
 <!-- try to return in hotkeys example   -->
 <!-- try .closest   -->
-add custom shortcuts, ex: / for input  
+<!-- add custom shortcuts, ex: / for input   -->
+<!-- make subline appear when line is focused   -->
+add handlerprops to every handler  
 

@@ -14,6 +14,7 @@ import LevelNext from "../../components/tabbable-navigation/levelNext/levelNext"
 
 const Home = () => {
   const clickCallBack = (e: any) => {
+    e.preventDefault();
     e.target.style.scale = 0.95;
     function func(t: any) {
       setTimeout(() => (t.style.scale = 1), 100);
@@ -31,47 +32,72 @@ const Home = () => {
           </div>
           <div className={styles.lines}>
             <Level1 tabIndex={0} className={styles.line}>
-              <LevelNext tabIndex={0} data-level={2}>
-                <LevelNext tabIndex={0} data-level={3}>
-                  n0
+              <span>
+                <strong>Menu 1</strong>
+              </span>{" "}
+              <span>
+                <strong>></strong>
+              </span>
+              <div className={styles.l1container}>
+                <LevelNext tabIndex={0} data-level={2} className={styles.l1}>
+                  <span>
+                    <strong>Submenu 1</strong>
+                  </span>{" "}
+                  <span>
+                    <strong>></strong>
+                  </span>
+                  <div className={styles.l2container}>
+                    <LevelNext
+                      tabIndex={0}
+                      data-level={3}
+                      className={styles.l2}
+                    >
+                      <strong>SubSubmenu 1</strong>
+                    </LevelNext>
+                    <LevelNext
+                      tabIndex={1}
+                      data-level={3}
+                      className={styles.l2}
+                    >
+                      <strong>SubSubmenu 2</strong>
+                    </LevelNext>
+                    <LevelNext
+                      tabIndex={2}
+                      data-level={3}
+                      className={styles.l2}
+                    >
+                      <strong>SubSubmenu 3</strong>
+                    </LevelNext>
+                  </div>
                 </LevelNext>
-                <LevelNext tabIndex={1} data-level={3}>
-                  n1
+                <LevelNext tabIndex={1} data-level={2} className={styles.l1}>
+                  <strong>Submenu 2</strong>
                 </LevelNext>
-                <LevelNext tabIndex={2} data-level={3}>
-                  n2
-                </LevelNext>
-              </LevelNext>
-              <LevelNext tabIndex={1} data-level={2}>
-                1
-              </LevelNext>
-              <LevelNext tabIndex={2} data-level={2}>
-                2
-              </LevelNext>
+              </div>
             </Level1>
             <Level1 tabIndex={1} className={styles.line}>
-              02
+              <strong>Menu 2</strong>
             </Level1>
             <Level1 tabIndex={2} className={styles.line}>
-              03
+              <strong>Menu 3</strong>
             </Level1>
             <Level1 tabIndex={3} className={styles.line}>
-              04
+              <strong>Help</strong>
             </Level1>
           </div>
         </Level0>
         <Level0 tabIndex={1} className={styles.header}>
           <Level1 tabIndex={0} className={styles.hdr} callback={clickCallBack}>
-            <Chart/>
+            <Chart />
           </Level1>
           <Level1 tabIndex={1} className={styles.hdr} callback={clickCallBack}>
-            <Diagram/>
+            <Diagram />
           </Level1>
           <Level1 tabIndex={2} className={styles.hdr} callback={clickCallBack}>
-            <Table/>
+            <Table />
           </Level1>
           <Level1 tabIndex={3} className={styles.hdr} callback={clickCallBack}>
-            <Archive/>
+            <Archive />
           </Level1>
         </Level0>
         <Level0 tabIndex={2} className={styles.main}>
@@ -80,10 +106,15 @@ const Home = () => {
             className={styles.m}
             component={"textarea"}
             defaultValue={
-              "Use tab, ctrl+j, ctrl+k, esc and enter to see how easy it is to navigate. \n\nFor more scroll down."
+              "See how easy it is to navigate... \n\nUse tab, shift+tab, ctrl+j, ctrl+k, arrows, esc and enter. \n\nFor more scroll down."
             }
           ></Level1>
-          <Level1 tabIndex={1} className={styles.ms} component={"select"} preventDefault={false}>
+          <Level1
+            tabIndex={1}
+            className={styles.ms}
+            component={"select"}
+            preventDefault={false}
+          >
             <option value="mercedes" tabIndex={0}>
               Mercedes
             </option>
@@ -101,7 +132,7 @@ const Home = () => {
             tabIndex={2}
             className={styles.m}
             component={"input"}
-            placeholder={"Search"}
+            placeholder={"Search, press /"}
           ></Level1>
         </Level0>
         <Level0 tabIndex={3} className={styles.footer}>

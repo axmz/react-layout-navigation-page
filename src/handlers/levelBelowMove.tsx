@@ -1,14 +1,15 @@
-import { RefObject } from "react";
-import {WithLevel} from '../handlers'
+import {WithLevel, HandlerProps} from '../handlers'
 
 export default function levelBelowMove(
   e: any, // KeyboardEvent
-  step: number,
-  ref: RefObject<WithLevel<HTMLElement>>
+  step: -1 | 1,
+  props?: HandlerProps
 ) {
-  e.stopPropagation()
-  e.preventDefault();
-  const parentEl: WithLevel<HTMLElement> = ref.current!;
+  if (props?.preventDefault === true || !props || !("preventDefault" in props)) {
+    e.preventDefault();
+  }
+  e.stopPropagation();
+  const parentEl: WithLevel<HTMLElement> = e.currentTarget;
   let currentIdx:number = e.target.tabIndex;
   const parentLevel: number = parseInt(parentEl.dataset.level ?? "-1");
   const currentLevel: number = parseInt(e.target.dataset.level ?? "-1");

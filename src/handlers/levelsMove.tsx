@@ -1,12 +1,13 @@
+import { HandlerProps } from "../handlers";
+
 export function levelsMove(
   e: any,
-  step: number,
-  props?: { preventDefault?: boolean; callback?: (e: any) => void }
+  step: -1 | 1,
+  props?: HandlerProps
 ) {
-  if (props) {
-    if (props?.preventDefault === true || !("preventDefault" in props)) {
-      e.preventDefault();
-    }
+  debugger;
+  if (props?.preventDefault === undefined ||props?.preventDefault === true || !props || !("preventDefault" in props)) {
+    e.preventDefault();
   }
   e.stopPropagation();
   const currentEl = e.target;

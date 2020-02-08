@@ -1,25 +1,26 @@
-import { RefObject } from "react";
-import { WithLevel } from ".";
+import { WithLevel, HandlerProps } from ".";
 
 export default function baseLevelMove(
   e: any,
-  step: number,
-  ref: RefObject<WithLevel>
+  step: -1 | 1,
+  props?: HandlerProps
 ) {
-  e.preventDefault();
+  if (props?.preventDefault === true || !props || !("preventDefault" in props)) {
+    e.preventDefault();
+  }
+  e.stopPropagation();
   const baseLevel: number = 0;
   const currentEl: WithLevel = e.target;
   const baseEl = currentEl.closest(`[data-level="${baseLevel}"]`) as WithLevel;
   let currentLevel: number = parseInt(currentEl.dataset.level);
   let currentIdx: number;
-  // debugger;
   if (currentLevel === -1) {
     currentLevel = 0;
     currentIdx = -1;
   } else {
-    currentIdx = baseEl.tabIndex
+    currentIdx = baseEl.tabIndex;
   }
-  const parentEl: WithLevel = ref.current!;
+  const parentEl: WithLevel = e.currentTarget;
 
   const tabbables = parentEl.querySelectorAll(`[data-level="0"][tabIndex]`);
 

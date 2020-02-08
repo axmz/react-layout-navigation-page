@@ -11,12 +11,12 @@ const Wrapper: React.FC<Props> = ({
   const handler = (e: KeyboardEvent) => {
     // tab
     if (e.keyCode === 9 && e.shiftKey) {
-      baseLevelMove(e, -1, ref)
+      baseLevelMove(e, -1)
       return
     }
     // shift+tab
     if (e.keyCode === 9 && !e.shiftKey ) {
-      baseLevelMove(e, +1, ref)
+      baseLevelMove(e, +1)
       return
     }
     // ctrl+j DO NOTHING
@@ -26,6 +26,16 @@ const Wrapper: React.FC<Props> = ({
     }
     // ctrl+k DO NOTHING
     if (!e.shiftKey && e.ctrlKey && e.keyCode === 75) {
+      e.preventDefault()
+      return
+    }
+    // ctrl+h DO NOTHING
+    if (!e.shiftKey && e.ctrlKey && e.keyCode === 72) {
+      e.preventDefault()
+      return
+    }
+    // ctrl+l DO NOTHING
+    if (!e.shiftKey && e.ctrlKey && e.keyCode === 76) {
       e.preventDefault()
       return
     }

@@ -1,5 +1,5 @@
-import React, { useRef, HtmlHTMLAttributes, ElementType, useEffect } from "react";
-import { WithLevel, Props, WithAttributes, levelBelowMove, levelsMove } from "../../../handlers";
+import React, { useRef, useEffect } from "react";
+import { WithLevel, Props, WithAttributes, levelsMove } from "../../../handlers";
 
 const Level1: React.FC<Props> = ({
   component,
@@ -8,16 +8,16 @@ const Level1: React.FC<Props> = ({
   callback,
   ...otherProps
 }) => {
-  const ref = useRef<WithLevel<HTMLElement>>(null);
+  const ref = useRef<WithLevel>(null);
   const props = {preventDefault, callback}
   const handler = (e: KeyboardEvent) => {
-    // enter
-    if (e.keyCode === 13 && !e.ctrlKey) {
+    // enter / ctrl+l
+    if (e.keyCode === 13 && !e.ctrlKey || (!e.shiftKey && e.ctrlKey && e.keyCode === 76)) {
       levelsMove(e, +1, props)
       return
     }
-    // esc
-    if (e.keyCode === 27) {
+    // esc / ctrl+h
+    if (e.keyCode === 27 || (!e.shiftKey && e.ctrlKey && e.keyCode === 72)) {
       levelsMove(e, -1, props)
       return
     }

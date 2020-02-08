@@ -10,21 +10,21 @@ const LevelNext: React.FC<Props> = ({
   const handler = (e: KeyboardEvent) => {
     // ctrl+j
     if (!e.shiftKey && e.ctrlKey && e.keyCode === 74) {
-      sameLevelMove(e, +1, ref)
+      sameLevelMove(e, +1)
       return
     }
     // ctrl+k
     if (!e.shiftKey && e.ctrlKey && e.keyCode === 75) {
-      sameLevelMove(e, -1, ref)
+      sameLevelMove(e, -1)
       return
     }
-    // enter
-    if (e.keyCode === 13 && !e.ctrlKey) {
+    // enter / ctrl+l
+    if (e.keyCode === 13 && !e.ctrlKey || (!e.shiftKey && e.ctrlKey && e.keyCode === 76)) {
       levelsMove(e, +1)
       return
     }
-    // esc
-    if (e.keyCode === 27) {
+    // esc / ctrl+h
+    if (e.keyCode === 27 || (!e.shiftKey && e.ctrlKey && e.keyCode === 72)) {
       levelsMove(e, -1)
       return
     }
@@ -46,7 +46,7 @@ const LevelNext: React.FC<Props> = ({
     c,
     {
       ref,
-      'data-level': 2,
+      // 'data-level': 2,
       ...otherProps
     },
     children
