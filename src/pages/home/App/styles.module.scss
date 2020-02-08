@@ -29,7 +29,7 @@
   grid-template-columns: minmax(12rem, 14rem) repeat(4, minmax(50px, 1fr));
   grid-template-rows: 6rem repeat(2, 1fr) 12rem;
   z-index: 0;
-  background-image: url("./assets/wood.jpg");
+  background-image: url("../assets/wood.jpg");
   background-position: center;
   background-size: cover;
   // background: linear-gradient(to right, cyan, lime);
@@ -260,10 +260,4 @@
       }
     }
   }
-}
-
-.body {
-  background-color: lightpink;
-  height: 100rem;
-  z-index: 1;
 }

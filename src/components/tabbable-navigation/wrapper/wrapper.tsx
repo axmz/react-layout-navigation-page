@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { WithLevel, Props, baseLevelMove, levelBelowMove } from "../../../handlers";
+import { WithLevel, Props, baseLevelMove} from "../../../handlers";
 
 const Wrapper: React.FC<Props> = ({
   component,

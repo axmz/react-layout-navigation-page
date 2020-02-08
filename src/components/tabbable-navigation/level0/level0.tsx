@@ -20,7 +20,7 @@ const Level0: React.FC<Props> = ({
       return
     }
     // enter / ctrl+l
-    if (e.keyCode === 13 && !e.ctrlKey || (!e.shiftKey && e.ctrlKey && e.keyCode === 76)) {
+    if ((e.keyCode === 13 && !e.ctrlKey) || (!e.shiftKey && e.ctrlKey && e.keyCode === 76)) {
       levelsMove(e, +1)
       return
     }
@@ -48,7 +48,7 @@ const Level0: React.FC<Props> = ({
     {
       ref,
       'data-level': 0,
-      ...otherProps
+      ...otherProps,
     },
     children
   );

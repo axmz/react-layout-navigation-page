@@ -1,15 +1,25 @@
 import { HandlerProps } from "../handlers";
 
-export function levelsMove(
-  e: any,
-  step: -1 | 1,
-  props?: HandlerProps
-) {
-  debugger;
-  if (props?.preventDefault === undefined ||props?.preventDefault === true || !props || !("preventDefault" in props)) {
+export function levelsMove(e: any, step: -1 | 1, props?: HandlerProps) {
+
+  if (
+    !props ||
+    !("preventDefault" in props) ||
+    props.preventDefault === undefined ||
+    props.preventDefault === true
+  ) {
     e.preventDefault();
   }
-  e.stopPropagation();
+
+  if (
+    !props ||
+    !("stopPropagation" in props) ||
+    props.stopPropagation === undefined ||
+    props.stopPropagation === true
+  ) {
+    e.stopPropagation();
+  }
+
   const currentEl = e.target;
   let currentLevel = parseInt(currentEl.dataset.level);
   const parentLevel = currentLevel === -1 ? -1 : currentLevel - 1;
@@ -28,9 +38,9 @@ export function levelsMove(
       nextElement.focus();
     } else {
       // callback
-        if (props?.callback) {
-          props.callback(e);
-        }
+      if (props?.callback) {
+        props.callback(e);
+      }
     }
   } else if (step < 0) {
     tabbables = parentParentEl.querySelectorAll(

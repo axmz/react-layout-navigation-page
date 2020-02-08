@@ -1,22 +1,21 @@
 import {
   ComponentPropsWithRef,
   HTMLAttributes,
-  RefObject,
+  // RefObject,
   ElementType
 } from "react";
 
 export type WithLevel<K = HTMLElement> = {
   dataset: { level: string; };
   tabIndex: number;
-  ref: RefObject<K>;
-  shortcut: string;
+  // ref: RefObject<K>;
 } & K;
 
 export type WithAttributes<T extends HTMLElement> = {
   "data-level": number;
   preventDefault: boolean;
-  shortcut: string;
-  ref: RefObject<T>;
+  stopPropagation: boolean;
+  // ref: RefObject<T>;
 } & HTMLAttributes<T>;
 
 export type Props = {
@@ -27,5 +26,6 @@ export type Props = {
 
 export interface HandlerProps {
   preventDefault?: boolean;
+  stopPropagation?: boolean;
   callback?: (e: any) => void;
 }

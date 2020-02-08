@@ -21,4 +21,7 @@ change tabs simulate/how to insall
 <!-- add custom shortcuts, ex: / for input   -->
 <!-- make subline appear when line is focused   -->
 add handlerprops to every handler  
+fix no mixed operators  
+put all handlers in onkeydown  
+fix click sim  
 
