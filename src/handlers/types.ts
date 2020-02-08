@@ -6,9 +6,8 @@ import {
 } from "react";
 
 export type WithLevel<K = HTMLElement> = {
-  dataset: {
-    level: string;
-  };
+  dataset: { level: string; };
+  tabIndex: number;
   ref: RefObject<K>;
   shortcut: string;
 } & K;
