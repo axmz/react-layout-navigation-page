@@ -25,4 +25,5 @@ change tabs simulate/how to insall
 <!-- put all handlers in onkeydown   -->
 <!-- fix click sim   -->
 put stopPropagation validation to every handler  
+<!-- breakdown styles -->
 

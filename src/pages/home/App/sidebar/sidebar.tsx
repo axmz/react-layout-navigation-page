@@ -4,8 +4,8 @@ import {
   Level0,
   Level1,
   LevelNext
-} from "../../../components/tabbable-navigation";
-import { ReactComponent as Html5Svg } from "../assets/html5-brands.svg";
+} from "../../../../components/tabbable-navigation";
+import { ReactComponent as Html5Svg } from "../../assets/html5-brands.svg";
 
 const Sidebar = () => {
   return (

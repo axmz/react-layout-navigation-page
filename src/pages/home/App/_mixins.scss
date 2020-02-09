@@ -1,0 +1,29 @@
+@mixin basic {
+  padding: 1rem;
+  margin: 5px;
+  background-color: rgba(#ffffff, 0.8);
+  border-radius: 2px;
+  &:focus {
+    background-color: rgba(#ffffff, 1);
+    border: 5px solid tomato;
+    padding: calc(1rem - 5px);
+    outline: none;
+  }
+}
+
+@mixin basic-container {
+  margin: 5px;
+  padding: 5px;
+  background-color: rgba($color: #000000, $alpha: 0.4);
+  border-radius: 2px;
+  &:focus-within {
+    background-color: rgba($color: #000000, $alpha: 0.6);
+    outline: none;
+  }
+}
+
+@mixin flex-centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

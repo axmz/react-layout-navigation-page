@@ -1,10 +1,10 @@
 import React from "react";
 import styles from "./styles.module.scss";
-import Sidebar from "./sidebar";
+import Sidebar from "./sidebar/sidebar";
 import { Wrapper } from "../../../components/tabbable-navigation";
-import Header from "./header";
-import Main from "./main";
-import Footer from "./footer";
+import Header from "./header/header";
+import Main from "./main/main";
+import Footer from "./footer/footer";
 
 const App = () => {
   return (

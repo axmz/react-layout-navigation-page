@@ -1,0 +1,35 @@
+@import "../mixins";
+
+.footer {
+  @include basic-container();
+  @include flex-centered();
+  justify-content: space-around;
+  grid-row: 4/5;
+  grid-column: 1/-1;
+  opacity: 0;
+  z-index: -1;
+  transition: all 0.1s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  &:focus-within {
+    transform: translateY(0);
+    opacity: 1;
+    z-index: 0;
+  }
+
+  .f {
+    @include basic();
+    @include flex-centered();
+    width: 4rem;
+    height: 4rem;
+    &:active {
+      scale: 0.95;
+      transform-origin: center;
+    }
+    svg {
+      height: 3rem;
+      path {
+        fill: grey;
+        height: 2rem;
+      }
+    }
+  }
+}

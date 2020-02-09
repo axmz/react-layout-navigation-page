@@ -1,11 +1,11 @@
 import React from "react";
 import styles from "./styles.module.scss";
-import { clickCallBack } from "../utils/click-simulator";
-import { Level0, Level1 } from "../../../components/tabbable-navigation";
-import { ReactComponent as Archive } from "../assets/archive-solid.svg";
-import { ReactComponent as Chart } from "../assets/chart-line-solid.svg";
-import { ReactComponent as Diagram } from "../assets/project-diagram-solid.svg";
-import { ReactComponent as Table } from "../assets/table-solid.svg";
+import { clickCallBack } from "../../utils/click-simulator";
+import { Level0, Level1 } from "../../../../components/tabbable-navigation";
+import { ReactComponent as Archive } from "../../assets/archive-solid.svg";
+import { ReactComponent as Chart } from "../../assets/chart-line-solid.svg";
+import { ReactComponent as Diagram } from "../../assets/project-diagram-solid.svg";
+import { ReactComponent as Table } from "../../assets/table-solid.svg";
 
 const Header = () => {
   return (

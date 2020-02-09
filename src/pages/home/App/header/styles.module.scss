@@ -1,0 +1,28 @@
+@import "../mixins";
+
+.header {
+  @include basic-container();
+  @include flex-centered();
+  justify-content: space-evenly;
+  grid-row: 1/2;
+  grid-column: 2/-1;
+
+  .hdr {
+    @include basic();
+    @include flex-centered();
+    width: 2rem;
+    height: 2rem;
+    user-select: none;
+    &:active {
+      scale: 0.95;
+      transform-origin: center;
+    }
+    svg {
+      height: 1.5rem;
+      path {
+        fill: grey;
+        // height: 2rem;
+      }
+    }
+  }
+}
