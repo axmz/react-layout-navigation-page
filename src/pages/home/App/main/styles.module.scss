@@ -5,19 +5,18 @@
     grid-column: 2/-1;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 3.9rem;
+    grid-template-rows: 1fr 4.9rem;
 
     .m {
       @include basic();
+      border: 0px;
       &:last-child {
         grid-column: 1/4;
-        line-height: 1.2rem;
-        font-size: 1rem;
       }
     }
     .ms {
       @include basic();
-      height: 3.2rem;
-      width: calc(100% - 10px);
+      border: 0px;
+      width: calc(100% - 1rem);
     }
   }

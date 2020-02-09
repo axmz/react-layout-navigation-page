@@ -18,14 +18,14 @@
   .f {
     @include basic();
     @include flex-centered();
-    width: 4rem;
-    height: 4rem;
+    width: 6rem;
+    height: 6rem;
     &:active {
       scale: 0.95;
       transform-origin: center;
     }
     svg {
-      height: 3rem;
+      height: 5rem;
       path {
         fill: grey;
         height: 2rem;

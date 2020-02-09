@@ -26,4 +26,5 @@ change tabs simulate/how to insall
 <!-- fix click sim   -->
 put stopPropagation validation to every handler  
 <!-- breakdown styles -->
+fix menu lines  
 

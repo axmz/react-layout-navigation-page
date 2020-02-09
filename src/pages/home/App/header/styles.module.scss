@@ -10,18 +10,17 @@
   .hdr {
     @include basic();
     @include flex-centered();
-    width: 2rem;
-    height: 2rem;
+    width: 2.6rem;
+    height: 2.6rem;
     user-select: none;
     &:active {
       scale: 0.95;
       transform-origin: center;
     }
     svg {
-      height: 1.5rem;
+      height: 2rem;
       path {
         fill: grey;
-        // height: 2rem;
       }
     }
   }
