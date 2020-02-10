@@ -1,14 +1,12 @@
 import { WithLevel, HandlerProps } from ".";
+import handlerPropsValidation from "./handlerPropsValidation"
 
 export default function baseLevelMove(
   e: any,
   step: -1 | 1,
-  props?: HandlerProps
+  handlerProps: HandlerProps
 ) {
-  if (props?.preventDefault === true || !props || !("preventDefault" in props)) {
-    e.preventDefault();
-  }
-  e.stopPropagation();
+  handlerPropsValidation(e, handlerProps)
   const baseLevel: number = 0;
   const currentEl: WithLevel = e.target;
   const baseEl = currentEl.closest(`[data-level="${baseLevel}"]`) as WithLevel;

@@ -1,8 +1,8 @@
 import { HandlerProps } from "../handlers";
 import handlerPropsValidation from "./handlerPropsValidation"
 
-export function levelsMove(e: any, step: -1 | 1, props: HandlerProps) {
-  handlerPropsValidation(e, props)
+export function levelsMove(e: any, step: -1 | 1, handlerProps: HandlerProps) {
+  handlerPropsValidation(e, handlerProps)
 
   const currentEl = e.target;
   let currentLevel = parseInt(currentEl.dataset.level);
@@ -22,8 +22,8 @@ export function levelsMove(e: any, step: -1 | 1, props: HandlerProps) {
       nextElement.focus();
     } else {
       // callback
-      if (props?.callback) {
-        props.callback(e);
+      if (handlerProps?.callback) {
+        handlerProps.callback(e);
       }
     }
   } else if (step < 0) {

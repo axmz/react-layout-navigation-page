@@ -4,19 +4,23 @@ import { WithLevel, Props, baseLevelMove} from "../../../handlers";
 const Wrapper: React.FC<Props> = ({
   component,
   children,
+  preventDefault,
+  stopPropagation,
+  callback,
   ...otherProps
 }) => {
   const ref = useRef<WithLevel<HTMLDivElement>>(null);
+  const props = { preventDefault, callback, stopPropagation };
 
   const handler = (e: KeyboardEvent) => {
     // tab
     if (e.keyCode === 9 && e.shiftKey) {
-      baseLevelMove(e, -1)
+      baseLevelMove(e, -1, props)
       return
     }
     // shift+tab
     if (e.keyCode === 9 && !e.shiftKey ) {
-      baseLevelMove(e, +1)
+      baseLevelMove(e, +1, props)
       return
     }
     // ctrl+j DO NOTHING

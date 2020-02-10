@@ -10,28 +10,27 @@ const Level0: React.FC<Props> = ({
   ...otherProps
 }) => {
   const ref = useRef<WithLevel<HTMLDivElement>>(null);
-  const props: HandlerProps = { preventDefault, callback, stopPropagation };
+  const handlerProps: HandlerProps = { preventDefault, callback, stopPropagation };
 
   const handler = (e: KeyboardEvent) => {
     // ctrl+j
     if (!e.shiftKey && e.ctrlKey && e.keyCode === 74) {
-      levelBelowMove(e, +1)
+      levelBelowMove(e, +1, handlerProps)
       return
     }
     // ctrl+k
     if (!e.shiftKey && e.ctrlKey && e.keyCode === 75) {
-      levelBelowMove(e, -1)
+      levelBelowMove(e, -1, handlerProps)
       return
     }
     // enter / ctrl+l
     if ((e.keyCode === 13 && !e.ctrlKey) || (!e.shiftKey && e.ctrlKey && e.keyCode === 76)) {
-          console.log('ppp', props)
-      levelsMove(e, +1, props)
+      levelsMove(e, +1, handlerProps)
       return
     }
     // esc / ctrl+h
     if (e.keyCode === 27 || (!e.shiftKey && e.ctrlKey && e.keyCode === 72)) {
-      levelsMove(e, -1, props)
+      levelsMove(e, -1, handlerProps)
       return
     }
   };

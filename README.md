@@ -24,10 +24,12 @@ change tabs simulate/how to insall
 <!-- fix no mixed operators   -->
 <!-- put all handlers in onkeydown   -->
 <!-- fix click sim   -->
-put stopPropagation validation to every handler  
+<!-- put stopPropagation validation to every handler   -->
 <!-- breakdown styles -->
 fix menu lines  
 <!-- fix switch enter error   -->
 temporary fix for stopPropagation. find another solution  
-implement global handler in wraper?  
+<!-- implement global handler in wraper?   -->
+documentation  
+publish  
 

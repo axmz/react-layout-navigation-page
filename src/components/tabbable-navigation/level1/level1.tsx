@@ -15,7 +15,7 @@ const Level1: React.FC<Props> = ({
   ...otherProps
 }) => {
   const ref = useRef<WithLevel>(null);
-  const props = { preventDefault, callback, stopPropagation };
+  const handlerProps = { preventDefault, callback, stopPropagation };
   const handler = useCallback(
     (e: KeyboardEvent) => {
       // enter / ctrl+l
@@ -23,12 +23,12 @@ const Level1: React.FC<Props> = ({
         (e.keyCode === 13 && !e.ctrlKey) ||
         (!e.shiftKey && e.ctrlKey && e.keyCode === 76)
         ) {
-        levelsMove(e, +1, props);
+        levelsMove(e, +1, handlerProps);
         return;
       }
       // esc / ctrl+h
       if (e.keyCode === 27 || (!e.shiftKey && e.ctrlKey && e.keyCode === 72)) {
-        levelsMove(e, -1, props);
+        levelsMove(e, -1, handlerProps);
         return;
       }
     },

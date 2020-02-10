@@ -1,11 +1,11 @@
 import { HandlerProps } from ".";
 
-export default function handlerPropsValidation (e: any, props: HandlerProps) {
-  if (props?.preventDefault === false) {
+export default function handlerPropsValidation (e: any, handlerProps: HandlerProps) {
+  if (handlerProps.preventDefault === false) {
   } else {
     e.preventDefault();
   }
-  if (props?.stopPropagation === true) {
+  if (handlerProps.stopPropagation === true) {
     e.stopPropagation();
   } 
 }

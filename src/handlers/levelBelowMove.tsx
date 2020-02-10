@@ -1,14 +1,12 @@
 import {WithLevel, HandlerProps} from '../handlers'
+import handlerPropsValidation from './handlerPropsValidation';
 
 export default function levelBelowMove(
   e: any, // KeyboardEvent
   step: -1 | 1,
-  props?: HandlerProps
+  handlerProps: HandlerProps
 ) {
-  if (props?.preventDefault === true || !props || !("preventDefault" in props)) {
-    e.preventDefault();
-  }
-  e.stopPropagation();
+  handlerPropsValidation(e, handlerProps)
   const parentEl: WithLevel<HTMLElement> = e.currentTarget;
   let currentIdx:number = e.target.tabIndex;
   const parentLevel: number = parseInt(parentEl.dataset.level ?? "-1");

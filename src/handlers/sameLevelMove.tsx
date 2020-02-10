@@ -1,14 +1,12 @@
 import { WithLevel, HandlerProps } from "../handlers";
+import handlerPropsValidation from "./handlerPropsValidation";
 
 export default function sameLevelMove(
   e: any,
   step: -1 | 1,
-  props?: HandlerProps,
+  handlerProps: HandlerProps,
 ) {
-  if (props?.preventDefault === true || !props || !("preventDefault" in props)) {
-    e.preventDefault();
-  }
-  e.stopPropagation();
+  handlerPropsValidation(e, handlerProps)
   const currentEl: WithLevel = e.target;
   let currentLevel: number = parseInt(currentEl.dataset.level);
   let currentIdx: number = currentEl.tabIndex;
