@@ -10,8 +10,8 @@
   .hdr {
     @include basic();
     @include flex-centered();
-    width: 2.6rem;
-    height: 2.6rem;
+    width: 3rem;
+    height: 3rem;
     user-select: none;
     &:active {
       scale: 0.95;

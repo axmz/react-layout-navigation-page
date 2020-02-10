@@ -1,30 +1,8 @@
 import { HandlerProps } from "../handlers";
+import handlerPropsValidation from "./handlerPropsValidation"
 
 export function levelsMove(e: any, step: -1 | 1, props: HandlerProps) {
-
-  console.log('e', e)
-  console.log('in', !props?.preventDefault) 
-  console.log('undef', props?.preventDefault === undefined )
-  console.log('true' ,props?.preventDefault === true)
-  if (
-    !props ||
-    !props.preventDefault ||
-    props.preventDefault === undefined ||
-    props.preventDefault === true
-  ) {
-    // e.preventDefault();
-  }
-  console.log('in', !props?.stopPropagation) 
-  console.log('undef', props?.stopPropagation === undefined )
-  console.log('true' ,props?.stopPropagation === true)
-  if (
-    !props ||
-    !props.stopPropagation ||
-    props.stopPropagation === undefined ||
-    props.stopPropagation === true
-  ) {
-    // e.stopPropagation();
-  }
+  handlerPropsValidation(e, props)
 
   const currentEl = e.target;
   let currentLevel = parseInt(currentEl.dataset.level);

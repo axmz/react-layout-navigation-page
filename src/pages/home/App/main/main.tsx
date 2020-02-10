@@ -17,7 +17,7 @@ const Main = () => {
       <div>
         <Level1
           tabIndex={1}
-          className={styles.ms}
+          className={styles.m}
           component={"select"}
           preventDefault={false}
         >
@@ -43,6 +43,7 @@ const Main = () => {
         ></Level1>
       </div>
       <Level1
+        id="search"
         tabIndex={3}
         className={styles.m}
         component={"input"}

@@ -7,7 +7,7 @@
   justify-content: space-between;
   grid-row: 1/5;
   grid-column: 1/2;
-  height: calc(100vh - 1.6rem);
+  height: calc(100vh - 2rem);
 
   .skip {
     @include basic();
@@ -15,6 +15,7 @@
     flex-direction: column;
     width: 16rem;
     height: 25%;
+    margin-top: 0;
     svg {
       height: 7rem;
       path {

@@ -23,7 +23,6 @@ const Level1: React.FC<Props> = ({
         (e.keyCode === 13 && !e.ctrlKey) ||
         (!e.shiftKey && e.ctrlKey && e.keyCode === 76)
         ) {
-          console.log('ppp', props)
         levelsMove(e, +1, props);
         return;
       }

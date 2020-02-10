@@ -27,4 +27,7 @@ change tabs simulate/how to insall
 put stopPropagation validation to every handler  
 <!-- breakdown styles -->
 fix menu lines  
+<!-- fix switch enter error   -->
+temporary fix for stopPropagation. find another solution  
+implement global handler in wraper?  
 
