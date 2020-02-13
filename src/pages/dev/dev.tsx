@@ -1,7 +1,7 @@
 import React from 'react'
-import TestWrapper from "../../components/test/testwrapper";
-import Test0 from "../../components/test/test0";
-import Test1 from "../../components/test/test1";
+import TestWrapper from "./test/testwrapper";
+import Test0 from "./test/test0";
+import Test1 from "./test/test1";
 
 const Dev = () => {
 

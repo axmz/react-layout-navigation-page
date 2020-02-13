@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./styles.module.scss";
 import { Level0, Level1 } from "../../../../components/tabbable-navigation";
-import Switch from "../../../../components/Switch/Switch";
+import Switch from "../../Switch/Switch";
 
 const Main = () => {
   return (

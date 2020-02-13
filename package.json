@@ -1,7 +1,13 @@
 {
-  "name": "tabbable-navigation",
+  "name": "react-layout-navigation",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "babel": {
+    "presets": [
+      "@babel/preset-react",
+      "@babel/preset-typescript"
+    ]
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.4.0",
@@ -22,6 +28,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "publish:npm": " rm -rf dist && mkdir dist && set NODE_ENV=production && babel src/components/tabbable-navigation/ -d dist/components/tabbable-navigation/ --copy-files --source-maps  --extensions .ts,.tsx && babel src/handlers/ -d dist/handlers --copy-files --source-maps  --extensions .ts,.tsx && babel src/index.ts -d dist/ --copy-files --source-maps  --extensions .ts,.tsx",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -38,5 +45,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/preset-react": "^7.8.3",
+    "@babel/preset-typescript": "^7.8.3"
   }
 }
