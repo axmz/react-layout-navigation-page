@@ -4,7 +4,7 @@ import {
   Props,
   WithAttributes,
   levelsMove
-} from "../../../handlers";
+} from "../../../../handlers";
 
 const Level1: React.FC<Props> = ({
   component,

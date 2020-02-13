@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from "react";
-import { WithLevel, Props, levelsMove, sameLevelMove, HandlerProps } from "../../../handlers";
+import { WithLevel, Props, levelsMove, sameLevelMove, HandlerProps } from "../../../../handlers";
 
 const LevelNext: React.FC<Props> = ({
   component,
