@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import Level0 from "../../../layout-navigation/src/components/level0/level0";
+import {Level0} from "react-layout-navigation";
 import "./style.css";
 
 const Test0: React.FC<{ tabIndex: number; children?: ReactNode }> = ({

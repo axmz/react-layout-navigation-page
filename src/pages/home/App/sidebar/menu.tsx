@@ -3,7 +3,7 @@ import styles from "./styles.module.scss";
 import {
   Level1,
   LevelNext
-} from "../../../../components/tabbable-navigation";
+} from "react-layout-navigation";
 
 const Menu = () => {
   return (

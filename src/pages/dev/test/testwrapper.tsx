@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import Wrapper from "../../../layout-navigation/src/components/wrapper/wrapper";
+import {Wrapper} from "react-layout-navigation";
 import './style.css'
 
 const TestWrapper: React.FC<{children: ReactNode}> = ({children}) => {

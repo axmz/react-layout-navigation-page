@@ -31,5 +31,5 @@ fix menu lines
 temporary fix for stopPropagation. find another solution  
 <!-- implement global handler in wraper?   -->
 documentation  
-publish  
+<!-- publish   -->
 

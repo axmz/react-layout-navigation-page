@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./styles.module.scss";
-import { Level0 } from "../../../../components/tabbable-navigation";
+import { Level0 } from "react-layout-navigation";
 import { ReactComponent as Html5Svg } from "../../assets/html5-brands.svg";
 import Menu from "./menu";
 
