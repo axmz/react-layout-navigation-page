@@ -1,6 +1,6 @@
 import React, { RefObject, Ref } from "react";
 import styles from "./styles.module.scss";
-import { WithLevel } from "../../../handlers";
+import { WithLevel } from "react-layout-navigation";
 
 const Switch = React.forwardRef((props: {}, ref: Ref<WithLevel<HTMLDivElement>>) => {
   const clickHandle = (e: any) => {

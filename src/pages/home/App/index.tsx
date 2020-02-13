@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./styles.module.scss";
 import Sidebar from "./sidebar/sidebar";
-import { Wrapper } from "../../../components/tabbable-navigation";
+import { Wrapper} from "react-layout-navigation";
 import Header from "./header/header";
 import Main from "./main/main";
 import Footer from "./footer/footer";

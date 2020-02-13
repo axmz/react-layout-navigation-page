@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./styles.module.scss";
 import { clickCallBack } from "../../utils/click-simulator";
-import { Level0, Level1 } from "../../../../components/tabbable-navigation";
+import { Level0, Level1 } from "react-layout-navigation";
 import { ReactComponent as HomeSvg } from "../../assets/home-solid.svg";
 import { ReactComponent as LockSvg } from "../../assets/lock-solid.svg";
 import { ReactComponent as CogsSvg } from "../../assets/cogs-solid.svg";
