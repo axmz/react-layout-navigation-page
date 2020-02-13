@@ -1,1 +1,0 @@
-{"version":3,"sources":["../src/index.ts"],"names":["default","handlers","components"],"mappings":"AAAA,SAAQA,OAAO,IAAIC,QAAnB,QAAkC,YAAlC;AACA,SAAQD,OAAO,IAAIE,UAAnB,QAAoC,kCAApC","sourcesContent":["export {default as handlers} from './handlers'\r\nexport {default as components} from './components/tabbable-navigation'\r\n"],"file":"index.js"}
