@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import {Level1} from "react-layout-navigation";
+import {Level1, LevelNext} from "react-layout-navigation";
 import "./style.css";
 
 const Test1: React.FC<{ tabIndex: number; children?: ReactNode }> = ({
@@ -19,9 +19,11 @@ const Test1: React.FC<{ tabIndex: number; children?: ReactNode }> = ({
   };
 
   return (
-    <Level1 callback={cb} tabIndex={tabIndex} className="tabbable__level--1">
-      {children}
-    </Level1>
+    <LevelNext data-level={1} callback={cb} tabIndex={tabIndex} className="tabbable__level--1" >
+      {/* <Level1 callback={cb} tabIndex={tabIndex} className="tabbable__level--1"> */}
+        {children}
+      {/* </Level1> */}
+    </LevelNext>
   );
 };
 

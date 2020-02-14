@@ -16,7 +16,7 @@ const Menu = () => {
           <strong>></strong>
         </span>
         <div className={styles.submenu}>
-            <LevelNext tabIndex={0} data-level={2} className={styles.line}>
+            <LevelNext stopPropagation={true} tabIndex={0} data-level={2} className={styles.line}>
               <span>
                 <strong>Submenu 1</strong>
               </span>
@@ -24,18 +24,18 @@ const Menu = () => {
                 <strong>></strong>
               </span>
               <div className={styles.submenu}>
-                <LevelNext tabIndex={0} data-level={3} className={styles.line}>
+                <LevelNext stopPropagation={true} tabIndex={0} data-level={3} className={styles.line}>
                   <strong>SubSubmenu 1</strong>
                 </LevelNext>
-                <LevelNext tabIndex={1} data-level={3} className={styles.line}>
+                <LevelNext stopPropagation={true} tabIndex={1} data-level={3} className={styles.line}>
                   <strong>SubSubmenu 2</strong>
                 </LevelNext>
-                <LevelNext tabIndex={2} data-level={3} className={styles.line}>
+                <LevelNext stopPropagation={true} tabIndex={2} data-level={3} className={styles.line}>
                   <strong>SubSubmenu 3</strong>
                 </LevelNext>
               </div>
             </LevelNext>
-          <LevelNext tabIndex={1} data-level={2} className={styles.line}>
+          <LevelNext stopPropagation={true} tabIndex={1} data-level={2} className={styles.line}>
             <strong>Submenu 2</strong>
           </LevelNext>
         </div>

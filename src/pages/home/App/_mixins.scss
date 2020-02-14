@@ -1,7 +1,7 @@
 @mixin basic {
   padding: 1rem;
   margin: 0.5rem;
-  background-color: rgba(#ffffff, 0.8);
+  background-color: rgba(#ffffff, 0.7);
   border-radius: 2px;
   &:focus {
     background-color: rgba(#ffffff, 1);
