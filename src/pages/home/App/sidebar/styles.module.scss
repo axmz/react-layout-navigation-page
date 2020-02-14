@@ -7,7 +7,7 @@
   justify-content: space-between;
   grid-row: 1/5;
   grid-column: 1/2;
-  height: calc(100vh - 2rem);
+  height: calc(100vh - 2.1rem);
 
   .skip {
     @include basic();
@@ -42,6 +42,12 @@
     flex-direction: row;
     justify-content: space-between;
     width: 16rem;
+    &:focus-within {
+      & > .submenu {
+        opacity: 1;
+        z-index: 1;
+      }
+    }
   }
 
   .submenu {
@@ -53,10 +59,9 @@
     transform: translateX(17.5rem) translateY(-1.4rem);
     z-index: -1;
     opacity: 0;
+    padding: 0;
     &:focus-within {
-      background-color: rgba(#000000, 0.6);
       transition: all 0.1s ease;
-      // transform: translateX(0rem);
       z-index: 1;
       opacity: 1;
     }

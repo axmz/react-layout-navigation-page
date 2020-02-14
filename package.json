@@ -2,6 +2,7 @@
   "name": "react-layout-navigation-page",
   "version": "0.1.0",
   "private": false,
+  "main":"./src/index.tsx",
   "homepage": "https://axmz.github.io/react-layout-navigation-page",
   "babel": {
     "presets": [

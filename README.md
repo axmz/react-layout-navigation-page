@@ -26,10 +26,12 @@ change tabs simulate/how to insall
 <!-- fix click sim   -->
 <!-- put stopPropagation validation to every handler   -->
 <!-- breakdown styles -->
-fix menu lines  
+<!-- fix menu lines   -->
 <!-- fix switch enter error   -->
 temporary fix for stopPropagation. find another solution  
 <!-- implement global handler in wraper?   -->
 documentation  
 <!-- publish   -->
+<!-- app is slightly off viewport   -->
+<!-- use arrows or not?   -->
 
