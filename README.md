@@ -12,7 +12,7 @@
 <!-- one more level for <select>   -->
 <!-- change click simulator -->
 <!-- add arrows   -->
-full screen simulate  
+<!-- full screen simulate   -->
 change tabs simulate/how to insall  
 <!-- try to avoid ref and see what happens   -->
 <!-- is ref necessary?   -->

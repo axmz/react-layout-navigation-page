@@ -7,6 +7,17 @@
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 5.1rem;
 
+  &.fullscreen:focus-within {
+    position: absolute;
+    width: calc(100% - 2rem);
+    height: calc(100vh - 2rem);
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("../../assets/forest.jpg") no-repeat center center fixed;
+    background-size: cover;
+    margin: 0.5;
+    padding: .5rem;
+    z-index: 10;
+  }
+
   .m {
     @include basic();
     border: 0px;
@@ -16,6 +27,11 @@
     &:last-child {
       grid-column: 1/4;
     }
+  }
+
+  .fullscreenInfo {
+    color: lightgray;
+    text-align: center;
   }
 
   select {

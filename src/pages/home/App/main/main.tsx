@@ -1,11 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./styles.module.scss";
 import { Level0, Level1 } from "react-layout-navigation";
 import Switch from "../../Switch/Switch";
 
 const Main = () => {
+  const [cls, setCls] = useState(styles.main);
+  const [fullscreen, toggleFullscreen] = useState(false);
+  const handleClick = (e: any) => {
+    console.log("key", e);
+    if (!fullscreen && e.keyCode === 70) {
+      setCls(`${styles.main} ${styles.fullscreen}`);
+    }
+    if (fullscreen && e.keyCode === 70) {
+      setCls(`${styles.main}`);
+    }
+    toggleFullscreen(!fullscreen);
+  };
+
   return (
-    <Level0 tabIndex={2} className={styles.main}>
+    <Level0 tabIndex={2} className={cls} onKeyDown={handleClick}>
       <Level1
         tabIndex={0}
         className={styles.m}
@@ -41,6 +54,9 @@ const Main = () => {
           stopPropagation={false}
           // className={styles.m}
         ></Level1>
+        <div className={styles.fullscreenInfo}>
+          F - for fullscreen
+        </div>
       </div>
       <Level1
         id="search"
