@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styles from "./styles.module.scss";
 import { Level0, Level1 } from "react-layout-navigation";
 import Switch from "../../Switch/Switch";
+import Logger from "../../Logger/LoggerContainer";
 
 const Main = () => {
   const [cls, setCls] = useState(styles.main);
@@ -57,6 +58,7 @@ const Main = () => {
         <div className={styles.fullscreenInfo}>
           F - for fullscreen
         </div>
+        {/* <Logger></Logger> */}
       </div>
       <Level1
         id="search"

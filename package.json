@@ -2,7 +2,7 @@
   "name": "react-layout-navigation-page",
   "version": "0.1.0",
   "private": false,
-  "main":"./src/index.tsx",
+  "main": "./src/index.tsx",
   "homepage": "https://axmz.github.io/react-layout-navigation-page",
   "babel": {
     "presets": [
@@ -15,11 +15,11 @@
     "@types/react": "^16.9.19",
     "@types/react-dom": "^16.9.5",
     "gh-pages": "^2.2.0",
-    "node-sass": "^4.13.1",
+    "node-sass": "^4.14.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-layout-navigation": "^0.3.5",
-    "react-scripts": "3.3.1",
+    "react-scripts": "^3.4.1",
     "typescript": "^3.7.5"
   },
   "scripts": {
