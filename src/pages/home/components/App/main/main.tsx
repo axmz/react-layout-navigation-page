@@ -25,7 +25,7 @@ const Main = () => {
         className={styles.m}
         component={"textarea"}
         defaultValue={
-          "See how easy it is to navigate...\n\nUse:\n\n - Tab\n - Shift+Tab\n - <C-hjkl>\n - Esc\n - Enter\n\nFor more scroll down."
+          "See how easy it is to navigate...\n\nUse:\n\n - Tab, Shift+Tab\n - <C-hjkl>\n - Enter, Esc\n\nFor more scroll down."
         }
       ></Level1>
       <div>
