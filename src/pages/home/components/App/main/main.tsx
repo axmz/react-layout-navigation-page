@@ -33,7 +33,7 @@ const Main = () => {
           tabIndex={1}
           className={styles.m}
           component={"select"}
-          preventDefault={false}
+          // preventDefault={false}
         >
           <option value="mercedes" tabIndex={0}>
             Mercedes
@@ -51,7 +51,7 @@ const Main = () => {
         <Level1
           tabIndex={2}
           component={Switch}
-          preventDefault={false}
+          // preventDefault={false}
           stopPropagation={false}
           // className={styles.m}
         ></Level1>
